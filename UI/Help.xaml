@@ -8,5 +8,6 @@
         Title="Справка" Height="300" Width="500" MinHeight="150" MinWidth="450" Icon="/EncoderDecoderApp;component/Resources/logo.ico">
     <Grid Background="#f0f0f0">
         <Label Content="Программа разработана студентом группы 23-Д9-3ИСП Толченицыной А. А." HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Image Source="/Resources/logo.png" Width="66" Height="66" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"></Image>
     </Grid>
 </Window>

@@ -19,6 +19,7 @@ namespace EncoderDecoderApp
     /// </summary>
     public partial class Help : Window
     {
+
         public Help()
         {
             InitializeComponent();
