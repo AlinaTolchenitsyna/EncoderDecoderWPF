@@ -54,7 +54,12 @@ namespace EncoderDecoderApp
         {
             if (TxtBoxLogin.Text == "Admin" && (PasswordBox.Password == "admin" || TxtBoxPassword.Text == "admin"))
             {
-                //Encryption encryption = new Encryption();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+            else
+            {
+                LblWrongPassword.Content = "Неверный логин или пароль";
             }
         }
     }

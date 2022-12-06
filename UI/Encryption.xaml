@@ -27,7 +27,7 @@
             <Button Height="25" Width="100" Margin="0 5 0 5" Content="Очистить" Click="Button_Click"></Button>
             <Button Height="25" Width="100" Margin="0 5 0 5" Content="Сохранить" Click="Button_Click"></Button>
             <Button Height="25" Width="100" Margin="0 5 0 5" Content="Файл" Click="Button_Click"></Button>
-            <Button Name="BtnHelp" Height="25" Width="100" Margin="0 5 0 5" Content="Справка" Click="BtnHelp_Click"></Button>
+            <Button Name="BtnHelp" Height="25" Width="100" Margin="0 5 0 5" Content="Справка" Click="Button_Click"></Button>
             <Button Name="BtnExit" Height="25" Width="100" Margin="0 5 0 5" Content="Выход" Click="BtnExit_Click"></Button>
         </StackPanel>
     </Grid>

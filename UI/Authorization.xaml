@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EncoderDecoderApp"
         mc:Ignorable="d"
-        Title="Справка" Height="300" Width="360" MinHeight="150" MinWidth="300" Icon="/EncoderDecoderApp;component/Resources/logo.ico">
+        Title="Авторизация" Height="300" Width="360" MinHeight="300" MinWidth="360" MaxWidth="360" MaxHeight="300" Icon="/EncoderDecoderApp;component/Resources/logo.ico">
     <Grid Background="#f0f0f0">
         <Image Source="/Resources/logo.png" Width="66" Height="66" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
         <Label Content="Логин" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"></Label>
@@ -15,6 +15,7 @@
         <PasswordBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="130" Margin="5" Name="PasswordBox" IsEnabled="False"></PasswordBox>
         <CheckBox Content="Показать пароль" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"></CheckBox>
         <Button Content="Войти" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Width="100" Height="25" Margin="10" Name="BtnEnter" Click="BtnEnter_Click"></Button>
+        <Label Name="LblWrongPassword" Grid.Row="2" Grid.Column="1" Margin="0 30 0 0" HorizontalAlignment="Center"></Label>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>

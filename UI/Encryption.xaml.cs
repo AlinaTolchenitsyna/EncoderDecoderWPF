@@ -31,12 +31,7 @@ namespace EncoderDecoderApp
             MessageBox.Show("Функция в разработке.");
         }
 
-        private void BtnHelp_Click(object sender, RoutedEventArgs e)
-        {
-            Help help = new Help();
-            help.Show();
-            
-        }
+        
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
