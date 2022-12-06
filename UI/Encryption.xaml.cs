@@ -35,6 +35,7 @@ namespace EncoderDecoderApp
         {
             Help help = new Help();
             help.Show();
+            
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)

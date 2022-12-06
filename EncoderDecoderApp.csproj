@@ -68,14 +68,14 @@
       <DependentUpon>Encryption.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UI\Help.xaml">
+    <Page Include="UI\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Help.xaml.cs">
-      <DependentUpon>Help.xaml</DependentUpon>
+    <Compile Include="UI\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
