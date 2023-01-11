@@ -18,9 +18,9 @@ namespace EncoderDecoderApp
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Encryption : Window
     {
-        public MainWindow()
+        public Encryption()
         {
             InitializeComponent();
         }
@@ -35,6 +35,8 @@ namespace EncoderDecoderApp
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
+            Authorization authorization = new Authorization();
+            authorization.Show();
             this.Close();
         }
     }

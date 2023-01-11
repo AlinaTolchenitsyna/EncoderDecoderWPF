@@ -11,28 +11,56 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace EncoderDecoderApp
 {
     /// <summary>
     /// Логика взаимодействия для Help.xaml
     /// </summary>
-    public partial class Help : Window
+    public partial class Authorization : Window
     {
-        public Help()
+        public Authorization()
         {
             InitializeComponent();
         }
+
+        int counter = 0;
 
         private void TxtBoxLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(TxtBoxLogin.Text == "")
             {
+                TxtBoxPassword.IsEnabled = false;
                 PasswordBox.IsEnabled = false;
+                LblPassword.Opacity = 0.5;
+                CheckBoxShowPassword.IsEnabled = false;
+                CheckBoxShowPassword.Opacity = 0.5;
+                BtnEnter.IsEnabled = false;
             }
             else
             {
+                TxtBoxPassword.IsEnabled = true;
                 PasswordBox.IsEnabled = true;
+                LblPassword.Opacity = 1;
+                if (PasswordBox.Visibility == Visibility.Visible)
+                {
+                    if (PasswordBox.Password != "")
+                    {
+                        CheckBoxShowPassword.IsEnabled = true;
+                        CheckBoxShowPassword.Opacity = 1;
+                        BtnEnter.IsEnabled = true;
+                    }
+                }
+                else
+                {
+                    if (TxtBoxPassword.Text != "")
+                    {
+                        CheckBoxShowPassword.IsEnabled = true;
+                        CheckBoxShowPassword.Opacity = 1;
+                        BtnEnter.IsEnabled = true;
+                    }
+                }
             }
         }
 
@@ -52,15 +80,75 @@ namespace EncoderDecoderApp
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (TxtBoxLogin.Text == "Admin" && (PasswordBox.Password == "admin" || TxtBoxPassword.Text == "admin"))
+            if(PasswordBox.Visibility == Visibility.Visible)
             {
-                MainWindow mainWindow = new MainWindow();
+                TxtBoxPassword.Text = PasswordBox.Password;
+            }
+            if (TxtBoxLogin.Text == "Admin" && TxtBoxPassword.Text == "admin")
+            {
+                Encryption mainWindow = new Encryption();
                 mainWindow.Show();
+                this.Close();
             }
             else
             {
-                LblWrongPassword.Content = "Неверный логин или пароль";
+                if (counter == 0)
+                {
+                    MessageBox.Show("Неверно введен логин или пароль.", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                    counter++;
+                }
+                else if (counter == 1)
+                {
+                    MessageBox.Show("Неверно введен логин или пароль. У вас осталась одна попытка.", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                    counter++;
+                }
+                else
+                {
+                    GridAuthorization.Opacity = 0.5;
+                    MessageBox.Show("Вы истратили попытки на вход, повторите попытку через 5 секунд.", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Thread.Sleep(5000);
+                    GridAuthorization.Opacity = 1;
+                    counter = 0;
+                }
+                
             }
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (PasswordBox.Password == "")
+            {
+                CheckBoxShowPassword.IsEnabled = false;
+                CheckBoxShowPassword.Opacity = 0.5;
+                BtnEnter.IsEnabled = false;
+            }
+            else
+            {
+                CheckBoxShowPassword.IsEnabled = true;
+                CheckBoxShowPassword.Opacity = 1;
+                BtnEnter.IsEnabled = true;
+            }
+        }
+
+        private void TxtBoxPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TxtBoxPassword.Text == "")
+            {
+                CheckBoxShowPassword.IsEnabled = false;
+                CheckBoxShowPassword.Opacity = 0.5;
+                BtnEnter.IsEnabled = false;
+            }
+            else
+            {
+                CheckBoxShowPassword.IsEnabled = true;
+                CheckBoxShowPassword.Opacity = 1;
+                BtnEnter.IsEnabled = true;
+            }
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
