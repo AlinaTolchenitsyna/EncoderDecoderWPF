@@ -15,7 +15,7 @@ namespace EncoderDecoderApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Функция в разработке.");
+            MessageBox.Show("Функция в разработке.", "", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         

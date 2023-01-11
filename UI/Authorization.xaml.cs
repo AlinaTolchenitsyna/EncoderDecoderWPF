@@ -98,6 +98,15 @@ namespace EncoderDecoderApp
                     Thread.Sleep(5000);
                     GridAuthorization.Opacity = 1;
                     counter = 0;
+                    TxtBoxLogin.Text = "";
+                    PasswordBox.Password = "";
+                    PasswordBox.Visibility = Visibility.Visible;
+                    PasswordBox.IsEnabled = true;
+                    TxtBoxPassword.Text = "";
+                    TxtBoxPassword.Visibility = Visibility.Hidden;
+                    CheckBoxShowPassword.IsEnabled = false;
+                    CheckBoxShowPassword.IsChecked = false;
+                    BtnEnter.IsEnabled = false;
                 }
                 
             }
