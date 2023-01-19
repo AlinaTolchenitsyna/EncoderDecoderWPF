@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EncoderDecoderApp"
         mc:Ignorable="d"
-        Title="Шифратор-дешифратор" MinHeight="433" MinWidth="886" Height="433.043" Width="886.348" Icon="/EncoderDecoderApp;component/Resources/logo.ico">
+        Title="Шифратор-дешифратор" MinHeight="433" MinWidth="886" Height="433.043" Width="886.348" MaxHeight="500" Icon="/EncoderDecoderApp;component/Resources/logo.ico">
     <Grid Background="white">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>

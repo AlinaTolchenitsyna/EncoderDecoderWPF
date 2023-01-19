@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="File.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="UI\Encryption.xaml.cs">
       <DependentUpon>Encryption.xaml</DependentUpon>

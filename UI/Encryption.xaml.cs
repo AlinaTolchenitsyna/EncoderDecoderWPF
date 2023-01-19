@@ -60,12 +60,12 @@ namespace EncoderDecoderApp
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Text.SaveFile(TxtBoxEncryption);
+            File.SaveFile(TxtBoxEncryption);
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
         {
-            Text.OpenFile(TxtBoxEncryption);
+            File.OpenFile(TxtBoxEncryption);
         }
     }
 }
