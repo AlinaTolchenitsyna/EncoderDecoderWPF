@@ -73,7 +73,7 @@ namespace EncoderDecoderApp
             {
                 TxtBoxPassword.Text = PasswordBox.Password;
             }
-            if (TxtBoxLogin.Text == "Admin" && TxtBoxPassword.Text == "admin")
+            if (TxtBoxLogin.Text == "User" && TxtBoxPassword.Text == "User")
             {
                 Encryption mainWindow = new Encryption();
                 mainWindow.Show();

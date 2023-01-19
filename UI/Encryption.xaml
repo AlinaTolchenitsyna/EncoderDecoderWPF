@@ -17,17 +17,17 @@
             <ColumnDefinition Width="43*"/>
             <ColumnDefinition Width="58*" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Content="Шифратор-дешифратор" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Content="Пользователь" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <Image Grid.Column="0" Grid.Row="0" Source="/Resources/logo.png" HorizontalAlignment="left" Margin="10 0 0 0"></Image>
-        <TextBox Grid.Row="1" Grid.Column="0" Margin="10 10 10 50" Text="Введите текст." Grid.ColumnSpan="3"></TextBox>
-        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Content="Зашифровать" Click="Button_Click"></Button>
-        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Расшифровать" Click="Button_Click" Grid.ColumnSpan="3"></Button>
+        <TextBox Grid.Row="1" Grid.Column="0" Margin="10 10 10 50" Text="Введите текст." Grid.ColumnSpan="3" Name="TxtBoxEncryption"></TextBox>
+        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Content="Зашифровать" Name="BtnEncrypt" Click="BtnEncrypt_Click"></Button>
+        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Content="Расшифровать" Name="BtnDecrypt" Click="BtnDecrypt_Click" Grid.ColumnSpan="3"></Button>
         <StackPanel Grid.Row="1" Grid.Column="3" VerticalAlignment="Top">
-            <Button Margin="0 10 0 5" Content="Копировать" Click="Button_Click"></Button>
-            <Button Margin="0 5 0 5" Content="Вставить" Click="Button_Click"></Button>
-            <Button Margin="0 5 0 5" Content="Очистить" Click="Button_Click"></Button>
-            <Button Margin="0 5 0 5" Content="Сохранить" Click="Button_Click"></Button>
-            <Button Margin="0 5 0 5" Content="Файл" Click="Button_Click"></Button>
+            <Button Margin="0 10 0 5" Content="Копировать" Name="BtnCopy" Click="BtnCopy_Click"></Button>
+            <Button Margin="0 5 0 5" Content="Вставить" Name="BtnPaste" Click="BtnPaste_Click"></Button>
+            <Button Margin="0 5 0 5" Content="Очистить" Name="BtnClear" Click="BtnClear_Click"></Button>
+            <Button Margin="0 5 0 5" Content="Сохранить" Name="BtnSave" Click="BtnSave_Click"></Button>
+            <Button Margin="0 5 0 5" Content="Файл" Name="BtnFile" Click="BtnFile_Click"></Button>
             <Button Name="BtnExit" Margin="0 5 0 5" Content="Выход" Click="BtnExit_Click"></Button>
         </StackPanel>
     </Grid>

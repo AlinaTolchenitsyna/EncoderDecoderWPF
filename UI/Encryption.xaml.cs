@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Microsoft.Win32;
 
 namespace EncoderDecoderApp
 {
@@ -13,9 +14,12 @@ namespace EncoderDecoderApp
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnEncrypt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Функция в разработке.", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (TxtBoxEncryption.Text != "")
+                Text.shifdesh(TxtBoxEncryption);
+            else
+                Text.Error();
         }
 
         
@@ -25,6 +29,43 @@ namespace EncoderDecoderApp
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Close();
+        }
+
+        private void BtnDecrypt_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtBoxEncryption.Text != "")
+                Text.shifdesh(TxtBoxEncryption, false);
+            else
+                Text.Error();
+        }
+
+        private void BtnCopy_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtBoxEncryption.Text != "")
+                Clipboard.SetText(TxtBoxEncryption.Text);
+            else
+                Text.Error();
+        }
+
+        private void BtnPaste_Click(object sender, RoutedEventArgs e)
+        {
+            TxtBoxEncryption.Text = TxtBoxEncryption.Text +
+                Clipboard.GetText();
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            TxtBoxEncryption.Clear();
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Text.SaveFile(TxtBoxEncryption);
+        }
+
+        private void BtnFile_Click(object sender, RoutedEventArgs e)
+        {
+            Text.OpenFile(TxtBoxEncryption);
         }
     }
 }
